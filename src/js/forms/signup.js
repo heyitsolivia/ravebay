@@ -4,12 +4,13 @@
 var validator = require('../common/validator');
 var notifier = require('../common/notifier');
 
+
 // Grab submit button
 var submit = document.querySelector('.js-form-submit');
 
 // Validate form on submit
-submit.addEventListener("click", function( event ) {
-
+submit.addEventListener("click", function(event) {
+    event.preventDefault();
     var errorMessage = validateForm();
 
     // Call notifier if there is an error message to show
@@ -19,7 +20,6 @@ submit.addEventListener("click", function( event ) {
     }
 
 });
-
 
 // Form Validation
 function validateForm() {
@@ -40,6 +40,20 @@ function validateForm() {
         return 'Your password needs at least one special character.'
     }
 }
+
+// Grab reveal button
+var reveal = document.querySelector('.js-form-reveal');
+
+// Toggle between input types to reveal/hide password
+reveal.addEventListener("click", function( event ) {
+    // Grab password
+    var input = document.querySelector('.js-form-password');
+    // Toggle input type depending on current type attribute
+    var type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+    // Set input type
+    input.setAttribute('type', type);
+
+});
 
 
 module.exports = {
