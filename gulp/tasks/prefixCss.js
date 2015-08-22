@@ -5,7 +5,7 @@
 var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer');
  
-gulp.task('prefixCss', function () {
+gulp.task('prefixCss', ['buildCss'], function () {
     return gulp.src('./build/**/*.css')
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'ie 9'],
