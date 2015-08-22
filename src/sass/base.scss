@@ -1,5 +1,7 @@
 // Base Layout
 
 body {
-    background-color: #000;
+    background-color: $background;
+    color: $text;
+    font-family: $font-family-base;
 }

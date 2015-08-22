@@ -1,25 +1,29 @@
 // Colors
 
-$brand: #93278f;
-$primary: #662d91;
-$primary-dark: #4d226d;
+$brand:             #93278f;
 
-$background: #ebeef0;
-$background-dark: #e0e5e8;
+$primary:           #662d91;
+$primary-dark:      #4d226d;
 
-$text: #616a75;
-$text-light: #778f9b;
-$text-dark: #445963;
+$background:        #ebeef0;
+$background-dark:   #e0e5e8;
+ 
+$text:              #616a75;
+$text-light:        #778f9b;
+$text-dark:         #445963;
 
-$error-color: #ff1d25;
+$warning:           #ff1d25;
+
 
 // Typography
 
-$body-size: 14px;
-$heading-size: 18px;
-$micro-size: 13.86px;
-$nano-size: 12.22px;
+$font-family-base:  'Roboto Condensed', 'Arial Narrow', sans-serif;
 
-// Border radius
+$font-size-base:    14px;
+$font-size-large:   18px;
+$font-size-small:   13.86px;
+$font-size-xs:      12.22px;
 
-$radius-size: 2px;
+// Component Design
+
+$radius-size:       2px;
