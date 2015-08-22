@@ -1,0 +1,30 @@
+{
+  "name": "ravebay",
+  "version": "1.0.0",
+  "description": "A static HTML5 app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heyitsolivia/ravebay.git"
+  },
+  "author": "Olivia Cheng <",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heyitsolivia/ravebay/issues"
+  },
+  "homepage": "https://github.com/heyitsolivia/ravebay",
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-connect": "^2.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-streamify": "^1.0.0",
+    "gulp-uglify": "^1.2.0",
+    "require-dir": "^0.3.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
