@@ -1,4 +1,6 @@
 'use strict';
+
+// Compile sass and output css to /build/css
  
 var gulp = require('gulp'),
     sass = require('gulp-sass');

@@ -1,5 +1,7 @@
 'use strict';
 
+// Copy index.html from /src to /dist
+
 var gulp = require('gulp');
 
 gulp.task('copyIndex', function () {

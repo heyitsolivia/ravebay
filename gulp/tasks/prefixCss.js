@@ -1,5 +1,7 @@
 'use strict';
 
+// Add vendor prefixes to build step of css, output to /dist/css
+
 var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer');
  

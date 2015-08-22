@@ -1,5 +1,7 @@
 'use strict';
 
+// Compile javascript and output to application.js in /dist/js
+
 var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     browserify = require('browserify'),

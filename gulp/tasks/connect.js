@@ -1,5 +1,7 @@
 'use strict';
- 
+
+// Serve up files in /dist
+
 var gulp = require('gulp'),
     connect = require('gulp-connect');
  
