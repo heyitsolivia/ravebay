@@ -1,7 +1,9 @@
 // Base Layout
 
-body {
+.app {
     background-color: $background;
     color: $text;
     font-family: $font-family-base;
+    font-weight: 300;
+    font-size: $font-size-base;
 }
