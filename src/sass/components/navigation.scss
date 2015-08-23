@@ -134,6 +134,7 @@
 
 .main {
     @extend %container;
+    background-color: $background;
     margin-top: 50px;
 }
 
@@ -284,8 +285,10 @@
 .footer {
     @extend %container;
     background-color: $background-dark;
-    position: relative;
-    height: 150px;
+    position: absolute;    
+    left: 0;
+    bottom: 0;
+    height: 50px;
     width: 100%;
     margin-top: 50px;
 
@@ -295,4 +298,10 @@
     }
 }
 
-// animation {}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 100px;
+}
