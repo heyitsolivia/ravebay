@@ -62,18 +62,46 @@
     height: 100%;
     position: fixed;
     width: 220px;
-    top: 0;
-    // right: 0;
+    top: 50px;
     right: -220px;
+    transition: right 220ms linear;
+
+    &.is-active {
+        right: 0;
+        box-shadow: -10px 0px 10px -6px rgba(0,0,0,.15);
+    }
 
     &__toggle {
         position: fixed;
+        box-sizing: border-box;
+        padding-left: 20px;
         right: 0;
-        top: 0;
+        top: 0px;
+        display: block;
+        height: 50px;
+        color: #fff;
+        width: 100px;
+        text-decoration: none;
+        background-color: $primary;
+        background-image: url('../img/icon_menu.svg');
+        background-repeat: no-repeat;
+        background-position: center right 15px;
+        transition: width 120ms linear 100ms;
+
+        &.is-active {
+            width: 220px;
+
+            &.is-closing {
+                box-shadow: -10px 0px 10px -6px rgba(0,0,0,.15);
+            }
+        }
+
+        &.is-closing {
+           transition: width 120ms linear 0s;
+        }
     }
 
     &__menu {
-        // reset ul
         list-style: none;
         padding: 0;
         margin: 0;
@@ -81,12 +109,24 @@
 
     &__menu-item {
         color: #fff;
-        padding: 10px;
+        padding: 20px;
+        line-height: $font-size-base;
+        background-color: $primary;
+        cursor: pointer;
+        transition: background-color 200ms;
+
+        &:hover {
+            background-color: darken($primary, 8%);
+        }
 
         &--highlighted {
             @extend .nav__menu-item;
             background-color: $primary-dark;
-        }        
+    
+            &:hover {
+                background-color: darken($primary-dark, 5%);
+            }
+        }
     }
 }
 
@@ -166,7 +206,7 @@
         top: -5px;
         right: 0;
         opacity: 1;
-        box-shadow: 0px 5px 5px rgba(0,0,0, .15);
+        box-shadow: 0px 4px 6px rgba(0,0,0, .15);
         transition: top 250ms;
 
         &.is-active {
@@ -254,3 +294,5 @@
         bottom: 25px;
     }
 }
+
+// animation {}
