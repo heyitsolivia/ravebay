@@ -1,36 +1,63 @@
 'use strict';
 
 
+var dom = require('../common/dom');
 var validator = require('../common/validator');
 var notifier = require('../common/notifier');
 
 
 // Grab submit button
 var submit = document.querySelector('.js-form-submit');
+var input_username = document.querySelector('.js-form-username');
+var input_password = document.querySelector('.js-form-password');
 
 // Validate form on submit
 submit.addEventListener("click", function(event) {
     event.preventDefault();
-    var errorMessage = validateForm();
 
-    // Call notifier if there is an error message to show
+    var usernameError = validateUsername();
+    var passwordError = validatePassword();
 
-    if (!validator.isEmpty(errorMessage)) {
-        notifier.error(errorMessage);
+    var hasError = false;
+
+    // Call notifier if there is an error message to show and highlight input
+
+    if (validator.isEmpty(usernameError)) {
+        dom.removeClass(input_username, 'is-error');
+    } else {
+        notifier.error(usernameError);
+        hasError = true;
+        dom.addClass(input_username, 'is-error');
     }
 
+    if (validator.isEmpty(passwordError)) {
+        dom.removeClass(input_password, 'is-error');
+    } else {
+        if (!hasError) {
+            notifier.error(passwordError);
+        }
+        dom.addClass(input_password, 'is-error');
+    }
 });
 
-// Form Validation
-function validateForm() {
-    var username = document.querySelector('.js-form-username').value;
-    var password = document.querySelector('.js-form-password').value;
+// Validate Username
+function validateUsername() {
+    var username = input_username.value;
 
     // Return error messages for each validation case
 
     if (validator.isEmpty(username)) {
         return 'Please enter a username.';
-    } else if (validator.isEmpty(password)) {
+    }
+}
+
+// Validate Password
+function validatePassword() {
+    var password = input_password.value;
+
+    // Return error messages for each validation case
+
+    if (validator.isEmpty(password)) {
         return 'Please enter a password';
     } else if (!validator.atLeast(password, 6)) {
         return 'Your password needs at least 6 characters';
@@ -46,16 +73,9 @@ var reveal = document.querySelector('.js-form-reveal');
 
 // Toggle between input types to reveal/hide password
 reveal.addEventListener("click", function( event ) {
-    // Grab password
-    var input = document.querySelector('.js-form-password');
     // Toggle input type depending on current type attribute
-    var type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+    var type = input_password.getAttribute('type') === 'password' ? 'text' : 'password';
     // Set input type
-    input.setAttribute('type', type);
+    input_password.setAttribute('type', type);
 
 });
-
-
-module.exports = {
-    validateForm: validateForm
-};
