@@ -14,19 +14,12 @@
         position: relative;
         margin-bottom: 15px;
 
+        // Icon treatment in forms
         [class^="icon--"],
         [class*="icon--"] {
             position: absolute;
             top: 9px;
             right: 10px;
-            opacity: 1;
-
-            cursor: pointer;
-            transition: opacity 200ms;
-
-            &:hover {
-                opacity: .75;
-            }
         }
     }
     
@@ -91,5 +84,17 @@
             opacity: 0;
             transition: opacity 500ms;
         }
+    }
+
+    // Password reveal component
+    &__reveal {
+        cursor: pointer;
+        transition: opacity 200ms;
+        opacity: .75;
+
+        &:hover {
+            opacity: 1;
+        }
+
     }
 }
