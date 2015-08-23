@@ -1,62 +1,7 @@
-// Typography
-.u-small {
-    font-size: $font-size-xs;
-}
-
-.u-caps {
-    text-transform: uppercase;
-}
-
-.u-pullright {
-    float: right;
-}
-
-// Components
-
-%container {
-    box-sizing: border-box;
-    padding: 25px 20px;    
-}
-
-.logomark {
-    font-size: 0;
-    width: 40px;
-    height: 48px;
-    background-image: url('../img/logomark.svg');
-    background-repeat: no-repeat;
-}
-
-.note {
-    display: block;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
-
-// Header Component
-
-.header {
-    @extend %container;
-    background: $brand;
-    height: 50px;
-    line-height: 50px;
-    width: 100%;
-    position: fixed;
-    padding-top: 0;
-    padding-bottom: 0;
-    top: 0;
-    z-index: 100;
-
-
-    &__title {
-        font-size: $font-size-base;
-        font-weight: 300;
-        color: #fff;
-    }
-}
-
 // Navigation Component
 
+
+// Nav menu wrapper
 .nav {
     background-color: $primary;
     height: 100%;
@@ -65,12 +10,14 @@
     top: 50px;
     right: -220px;
     transition: right 220ms linear;
-
+    
+    // Active state for nav menu
     &.is-active {
         right: 0;
         box-shadow: -10px 0px 10px -6px rgba(0,0,0,.15);
     }
 
+    // Nav toggle
     &__toggle {
         position: fixed;
         box-sizing: border-box;
@@ -87,7 +34,8 @@
         background-repeat: no-repeat;
         background-position: center right 15px;
         transition: width 120ms linear 100ms;
-
+        
+        // Active state for nav toggle
         &.is-active {
             width: 220px;
 
@@ -96,10 +44,14 @@
             }
         }
 
+        // Closing state for nav toggle
+
         &.is-closing {
            transition: width 120ms linear 0s;
         }
     }
+
+    // Wrapper for nav menu items, mainly ul reset
 
     &__menu {
         list-style: none;
@@ -107,10 +59,12 @@
         margin: 0;
     }
 
+    // Individual nav menu items
+
     &__menu-item {
         color: #fff;
         padding: 20px;
-        line-height: $font-size-base;
+        line-height: 0;
         background-color: $primary;
         cursor: pointer;
         transition: background-color 200ms;
@@ -119,189 +73,23 @@
             background-color: darken($primary, 8%);
         }
 
-        &--highlighted {
+        
+        // Highlighted nav menu section
+
+        .nav__menu--highlighted & {
             @extend .nav__menu-item;
             background-color: $primary-dark;
     
             &:hover {
                 background-color: darken($primary-dark, 5%);
             }
-        }
-    }
-}
 
-// Main
-
-.main {
-    @extend %container;
-    background-color: $background;
-    margin-top: 50px;
-}
-
-// Form
-
-.form {
-    &__title {
-        font-size: $font-size-large;
-        color: $text-dark;
-    }
-
-    &__group {
-        position: relative;
-        box-sizing: border-box;
-        margin-bottom: 15px;
-
-        [class^="icon--"],
-        [class*="icon--"] {
-            position: absolute;
-            top: 9px;
-            right: 10px;
-            cursor: pointer;
-            transition: opacity 200ms;
-            opacity: 1;
-
-            &:hover {
-                opacity: .75;
+            &:first-child {
+                margin-top: 10px;
+            }
+            &:last-child {
+                margin-bottom: 10px;
             }
         }
     }
-
-    &__label {
-        position: absolute;
-        left: 0;
-        padding: 10px;
-        padding-top: 12px;
-    }
-
-    &__input {
-        border: 2px solid transparent;
-        border-radius: $radius-base;
-        box-sizing: border-box;
-        width: 100%;
-        padding: 10px;
-        padding-left: 80px;
-        color: $text-input;
-        transition: border-color 200ms;
-        
-        &.is-error {
-            border-color: $warning;
-        }
-
-        &--password {
-            @extend .form__input;
-            letter-spacing: 1px;
-        }
-    }
-
-    &__warning {
-        @extend %container;
-        background-color: $warning;
-        color: #fff;
-        text-align: center;
-        width: 100%;
-        height: 50px;
-        padding-top: 0;
-        padding-bottom: 0;
-        line-height: 50px;
-        position: fixed;
-        top: -5px;
-        right: 0;
-        opacity: 1;
-        box-shadow: 0px 4px 6px rgba(0,0,0, .15);
-        transition: top 250ms;
-
-        &.is-active {
-            top: 50px;
-        }
-
-        &.is-closing {
-            opacity: 0;
-            transition: opacity 500ms;
-        }
-    }
-}
-
-// Icon
-
-[class^="icon--"],
-[class*="icon--"] {
-    width: 22px;
-    height: 22px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.icon {
-    &--eye {
-        background-image: url('../img/icon_eye.svg');
-    }
-}
-
-
-
-// Buttons
-
-.button {
-    background-color: $primary;
-    color: #fff;
-    border: 0;
-    width: 100px;
-    height: 30px;
-    line-height: 30px;
-    padding: 0;
-    border-radius: $radius-base;
-    transition: background-color 200ms;
-
-    &:hover,
-    &:active {
-        background-color: $primary-dark;
-    }
-
-    &__group {
-        margin-top: 25px;
-        margin-bottom: 25px;
-
-        .alt-action {
-            height: 30px;
-            line-height: 30px;
-            float: right;
-            
-            &__link {
-                color: $text;
-                text-decoration: none;
-
-                &:hover {
-                    color: $primary;
-                }
-            }
-        }
-    }
-}
-
-
-// Footer
-
-.footer {
-    @extend %container;
-    background-color: $background-dark;
-    position: absolute;    
-    left: 0;
-    bottom: 0;
-    height: 50px;
-    width: 100%;
-    margin-top: 50px;
-
-    &__credit {
-        position: absolute;
-        bottom: 25px;
-    }
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-body {
-    margin: 0 0 100px;
 }

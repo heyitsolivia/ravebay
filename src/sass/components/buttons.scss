@@ -1,0 +1,48 @@
+// Button Components
+
+
+.button {
+
+    // Default button
+    width: 100px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    border-radius: $radius-base;
+    background-color: $primary;
+
+    line-height: 30px;
+    color: #fff;
+    
+    transition: background-color 200ms;
+
+    &:hover,
+    &:active {
+        background-color: $primary-dark;
+    }
+    
+    // Used to group button and alt-action together
+    &__group {
+        margin-top: 25px;
+        margin-bottom: 25px;
+
+
+        // Alternate action to button in button group
+        
+        .alt-action {
+            float: right;
+            height: 30px;
+            line-height: 30px;
+            
+            &__link {
+                color: $text;
+                text-decoration: none;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+    
+}

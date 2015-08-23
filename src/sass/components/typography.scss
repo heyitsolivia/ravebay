@@ -1,0 +1,20 @@
+// General Typography Components
+
+
+// Base styles
+.app {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: 300;
+    color: $text;
+}
+
+// Utility type classes
+
+.u-small {
+    font-size: $font-size-xs;
+}
+
+.u-caps {
+    text-transform: uppercase;
+}

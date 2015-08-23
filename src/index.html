@@ -1,71 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>The Brave UX App</title>
+        <title>The Brave UX App</title>
 
-    <link href="/css/application.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+        <link href="/css/application.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
 
-</head>
+    </head>
 
-<body class="app">
+    <body class="app">
 
-    <!-- Fixed app header and navigation -->
-    <header class="header">
-        <div class="header__title">The Brave UX App</div>
-        <a class="nav__toggle js-nav-toggle" href="#">
-            Menu
-        </a>
-        <nav class="nav js-nav-menu">
-            <ul class="nav__menu">
-                <li class="nav__menu-item">Dashboard</li>
-                <li class="nav__menu-item">My Profile</li>
-                <li class="nav__menu-item">Settings</li>
-                <li class="nav__menu-item--highlighted">Help</li>
-                <li class="nav__menu-item--highlighted">About</li>
-                <li class="nav__menu-item">Login</li>
-            </ul>
-        </nav>
-    </header>
+        <!-- Fixed app header and navigation -->
+        <header class="header">
+            <div class="header__title">The Brave UX App</div>
+            <a class="nav__toggle js-nav-toggle" href="#">
+                Menu
+            </a>
+            <nav class="nav js-nav-menu">
+                <ul class="nav__menu">
+                    <li class="nav__menu-item">Dashboard</li>
+                    <li class="nav__menu-item">My Profile</li>
+                    <li class="nav__menu-item">Settings</li>
+                    <div class="nav__menu--highlighted">
+                        <li class="nav__menu-item">Help</li>
+                        <li class="nav__menu-item">About</li>
+                    </div>
+                    <li class="nav__menu-item">Login</li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- Main app view -->
-    <main class="main">
-        
-        <div class="logomark">Brave UX</div>
-        
-        <small class="note u-small">Do <span class="u-caps">not</span> bookmark this page.</small>
-        
-        <form class="form">
-            <h3 class="form__title">Sign Up</h3>
-            <div class="form__group">
-                <label class="form__label">Username</label>
-                <input class="form__input js-form-username" type="text">
-            </div>
-            <div class="form__group">
-                <label class="form__label">Password</label>
-                <input class="form__input--password js-form-password" type="password">
-                <span class="form__reveal icon--eye js-form-reveal"></span>
-            </div>
-            <div class="button__group">
-                <button class="button js-form-submit">Sign Up</button>
-                <div class="alt-action">
-                    <a class="alt-action__link" href="#">Need Help?</a>
+        <!-- Main app view -->
+        <main class="main">
+            
+            <div class="logomark">Brave UX</div>
+            
+            <small class="note u-small">Do <span class="u-caps">not</span> bookmark this page.</small>
+            
+            <form class="form">
+                <h3 class="form__title">Sign Up</h3>
+                <div class="form__group">
+                    <label class="form__label">Username</label>
+                    <input class="form__input js-form-username" type="text">
                 </div>
-            </div>
-        </form>
-    </main>
+                <div class="form__group">
+                    <label class="form__label">Password</label>
+                    <input class="form__input js-form-password" type="password">
+                    <span class="form__reveal icon--eye js-form-reveal"></span>
+                </div>
+                <div class="button__group">
+                    <button class="button js-form-submit">Sign Up</button>
+                    <div class="alt-action">
+                        <a class="alt-action__link" href="#">Need Help?</a>
+                    </div>
+                </div>
+            </form>
+        </main>
 
-    <!-- Fixed app footer -->
-    <footer class="footer">
-        <span class="footer__credit">Powered by Brave UX</span>
-    </footer>
+        <!-- Fixed app footer -->
+        <footer class="footer">
+            <span class="footer__credit">Powered by Brave UX</span>
+        </footer>
 
-    <div class="form__warning js-notifier">There's an error with your form.</div>
+        <div class="form__warning js-notifier">There's an error with your form.</div>
 
-    <script src="/js/application.js"></script>
-</body>
+        <script src="/js/application.js"></script>
+    </body>
 </html>

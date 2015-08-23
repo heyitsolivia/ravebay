@@ -1,9 +1,15 @@
 // Import normalize
 @import 'normalize/normalize';
 
-// Import application styles
+// Import application base styles
 @import 'variables';
 @import 'base';
+@import 'components/typography';
 
 // Import application components
-@import 'components/navigation'
+@import 'components/header';
+@import 'components/navigation';
+@import 'components/footer';
+@import 'components/forms';
+@import 'components/buttons';
+@import 'components/icons';

@@ -1,0 +1,25 @@
+// Icon Components
+
+
+// General icon definition
+
+[class^="icon--"],
+[class*="icon--"] {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+// Individual icons
+
+.icon {
+    &--eye {
+        background-image: url('../img/icon_eye.svg');
+    }
+
+    &--menu {
+        background-image: url('../img/icon_menu.svg');
+    }
+}
